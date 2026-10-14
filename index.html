@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Web Code | تطوير واجهات الويب</title>
+<meta name="description" content="Web Code — تصميم وتطوير واجهات ويب سريعة وأنيقة بمعايير مؤسسية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" type="image/png" href="logo.png">
+<meta name="theme-color" content="#0a0d14">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="circuit" aria-hidden="true"></canvas>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a href="#home" class="brand" aria-label="Web Code — الرئيسية">
+      <span class="logo"><img class="logo-img" src="1.png" alt="شعار Web Code" width="400" height="256" decoding="async"></span>
+      <span class="brand-name">WEB CODE</span>
+    </a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="#home">الرئيسية</a><a href="#about">من نحن</a><a href="#projects">الأعمال</a><a href="#contact">التواصل</a>
+    </nav>
+    <a href="#contact" class="btn btn-sm header-cta">ابدأ مشروعك</a>
+    <button id="menu-toggle" class="menu-btn" aria-label="فتح القائمة" aria-expanded="false" aria-controls="drawer"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
+
+<div id="drawer" class="drawer" aria-hidden="true">
+  <div class="drawer-bg" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-label="قائمة التنقل">
+    <button data-close class="menu-btn close" aria-label="إغلاق القائمة"><i class="fa-solid fa-xmark"></i></button>
+    <a href="#home" data-close>الرئيسية</a><a href="#about" data-close>من نحن</a><a href="#projects" data-close>الأعمال</a><a href="#contact" data-close>التواصل</a>
+    <a href="#contact" data-close class="btn">ابدأ مشروعك</a>
+  </aside>
+</div>
+
+<main>
+<section id="home" class="hero">
+  <div class="wrap hero-in">
+    <p class="pill reveal"><span class="dot"></span>مطور واجهات أمامية</p>
+    <h1 class="reveal">نبني واجهات ويب سريعة، واضحة، ومصممة لتدوم</h1>
+    <p class="lead reveal">من الفكرة إلى الإطلاق: تصميم واجهات وتطويرها بـ HTML وCSS وJavaScript وReact، مع عناية خاصة بالأداء وتجربة الاستخدام على كل الشاشات.</p>
+    <div class="actions reveal">
+      <a href="#projects" class="btn">شاهد الأعمال</a>
+      <a href="#contact" class="btn btn-ghost">تواصل معنا</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="wrap">
+    <header class="sec-head reveal"><h2>من نحن</h2><p>نكتب كوداً نظيفاً، ونصمم واجهات تُفهم من النظرة الأولى.</p></header>
+    <div class="about-grid">
+      <article class="card pad reveal about-main">
+        <h3>رؤيتنا</h3>
+        <p>نؤمن أن الواجهة الجيدة هي التي لا تحتاج إلى شرح. نعمل مع الشركات والأفراد لبناء مواقع تجمع بين الجمال البصري وسرعة التحميل، ونسلّم كوداً منظماً يسهل تطويره لاحقاً.</p>
+        <div class="tags"><span class="tag">HTML5</span><span class="tag p">CSS3</span><span class="tag">JavaScript</span><span class="tag p">React.js</span><span class="tag">Tailwind CSS</span><span class="tag p">تصميم متجاوب</span></div>
+      </article>
+      <article class="card pad reveal"><i class="fa-solid fa-wand-magic-sparkles ic"></i><h4>تصميم الواجهات</h4><p>واجهات عصرية وتجربة تصفح مريحة.</p></article>
+      <article class="card pad reveal"><i class="fa-solid fa-code ic"></i><h4>برمجة نظيفة</h4><p>كود منظم وسريع وسهل الصيانة.</p></article>
+      <article class="card pad reveal"><i class="fa-solid fa-chart-line ic"></i><h4>تحسين محركات البحث</h4><p>هيكلة تساعد موقعك على الظهور في البحث.</p></article>
+      <article class="card pad reveal"><i class="fa-solid fa-shield-halved ic"></i><h4>الأمان</h4><p>ممارسات حماية أساسية للموقع وبياناته.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="wrap">
+    <header class="sec-head reveal"><h2>معرض الأعمال</h2><p>نماذج من مواقعنا — اضغط «رؤية الموقع» لفتح أي موقع مباشرة.</p></header>
+    <div class="grid">
+      <article class="card project reveal">
+        <img class="project-img" src="2.png" alt="معاينة موقع عقارات (Real Estate Showcase)" width="1672" height="941" loading="lazy" decoding="async">
+        <h3>موقع عقارات (Real Estate Showcase)</h3>
+        <p>عرض العقارات بفلاتر بحث وصور كبيرة وتواصل مباشر مع المسوّق.</p>
+        <a class="view" href="https://adnanaliwork13-blip.github.io/Project-/" target="_blank" rel="noopener noreferrer">رؤية الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+      <article class="card project reveal">
+        <img class="project-img" src="3.png" alt="معاينة موقع استشارات ومحاماة (Law & Consulting)" width="1672" height="941" loading="lazy" decoding="async">
+        <h3>موقع استشارات ومحاماة (Law & Consulting)</h3>
+        <p>موقع تعريفي لمكتب محاماة يبرز الخدمات والخبرات وحجز الاستشارات.</p>
+        <a class="view" href="https://adnanaliwork13-blip.github.io/Project-2/" target="_blank" rel="noopener noreferrer">رؤية الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+      <article class="card project reveal">
+        <img class="project-img" src="4.png" alt="معاينة معرض شخصي (Personal Portfolio)" width="1672" height="941" loading="lazy" decoding="async">
+        <h3>معرض شخصي (Personal Portfolio) </h3>
+        <p>بورتفوليو شخصي يعرض الأعمال والمهارات بتصميم أنيق.</p>
+        <a class="view" href="https://adnanaliwork13-blip.github.io/Project-3/" target="_blank" rel="noopener noreferrer">رؤية الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+      <article class="card project reveal">
+        <img class="project-img" src="5.png" alt="معاينة موقع طبي ومختبرات تحاليل (PathoLab / Medical Center)" width="1672" height="941" loading="lazy" decoding="async">
+        <h3>موقع طبي ومختبرات تحاليل (PathoLab / Medical Center)</h3>
+        <p>موقع لمركز طبي ومختبر تحاليل مع عرض الخدمات وحجز المواعيد.</p>
+        <a class="view" href="https://adnanaliwork13-blip.github.io/Project-4/" target="_blank" rel="noopener noreferrer">رؤية الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+      <article class="card project reveal">
+        <img class="project-img" src="6.png" alt="معاينة معرض شخصي (Personal Portfolio)" width="1672" height="941" loading="lazy" decoding="async">
+        <h3>معرض شخصي (Personal Portfolio) </h3>
+        <p>نسخة ثانية من البورتفوليو الشخصي بتنسيق مختلف للأعمال.</p>
+        <a class="view" href="https://adnanaliwork13-blip.github.io/Project-5/" target="_blank" rel="noopener noreferrer">رؤية الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="wrap">
+    <header class="sec-head reveal"><h2>تواصل معنا</h2></header>
+    <div class="card pad contact reveal">
+      <form id="contact-form">
+        <label for="full-name">الاسم</label>
+        <input id="full-name" class="field" type="text" autocomplete="name" placeholder="مثال: أحمد محمد" required>
+        <label for="phone">رقم الهاتف</label>
+        <input id="phone" class="field ltr" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="962 7 7015 7284" required>
+        <label for="user-message">الرسالة</label>
+        <textarea id="user-message" class="field" rows="4" placeholder="اكتب تفاصيل مشروعك..." required></textarea>
+        <div class="preview" aria-live="polite"><span>معاينة الرسالة</span><p id="preview-text"></p></div>
+        <button type="submit" class="btn wa"><i class="fa-brands fa-whatsapp"></i> إرسال عبر واتساب</button>
+        <p id="form-status" class="status" role="status"></p>
+      </form>
+      <div class="social in-card"><span>تابعنا على</span><span class="icons"><a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a data-wa href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <a href="#home" class="brand foot-brand" aria-label="Web Code — الرجوع للأعلى"> 
+    <span class="logo">   <img class="logo-img" src="1.png" alt="شعار Web Code" width="400" height="256" loading="lazy" decoding="async"></span><span class="brand-name">WEB CODE</span> 
+    </a>
+    <p>© 2026 Web Code. جميع الحقوق محفوظة.</p>
+    <div class="social"><span class="icons">
+      <a href="https://www.facebook.com/share/19wxAdsarh/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/web.code258?stkn=N3cydWd5N3Q5Zmtq" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a data-wa href="https://wa.me/0770157284" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></span></div><a href="#home" aria-label="الرجوع للأعلى" class="top"><i class="fa-solid fa-chevron-up"></i></a></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
